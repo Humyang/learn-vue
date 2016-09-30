@@ -1,0 +1,22 @@
+{
+  "name": "learn-vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Humyang/learn-vue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Humyang/learn-vue/issues"
+  },
+  "homepage": "https://github.com/Humyang/learn-vue#readme",
+  "dependencies": {
+    "vue": "^1.0.28"
+  }
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+<!--         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="vued">
+            <h1>数据绑定</h1>
+            <p>{{data}}</p>
+        </div>
+
+        <div id="two_bind">
+            <h1>双向绑定</h2>
+            <input type="text" v-model="input_value">
+            <div>output：{{input_value}}</div>
+        </div>
+        
+        <div id="render_list">
+            <h1>渲染列表</h1>
+            <div>
+                <ul>
+                    <li v-for="item in items">{{item.text}}</li>
+                </ul>
+            </div>
+        </div>
+        <div id="reverse">
+            <h1>处理用户输入</h1>
+            <div>
+                <input type="button" v-on:click="reverse" value="reverse message">
+                <p>{{message}}</p>
+            </div>
+        </div>
+        <div id="todo">
+            <h1>综合</h1>
+            <div>
+                <input type="text" v-model="current_item">
+                <input type="button" value="add"
+                    v-on:click="add_item">
+                <div>
+                    <ul>
+                        <li v-for="item in items"><span>{{item.text}}</span>
+                            <input type="button" v-on:click="remove_item($index)" value="X">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        Google Analytics: change UA-XXXXX-Y to be your site's ID.
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+        <script src="../vue.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
