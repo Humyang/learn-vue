@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+<!--         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="vmodel1">
+            <h1>Text</h1>
+            <span>message is : {{message}}</span>
+            <input type="text" v-model="message">
+        </div>
+        
+        <div id="vmodel2">
+            <h2>Checkbox</h2>
+            <div>
+                <input type="checkbox" id="checkbox" v-model="checked">
+                <label for="checkbox">{{checked}}</label>
+            </div>
+        </div>
+
+        <div id="vmodel3">
+            <h2>mulit Checkbox</h2>
+            <div>
+                <input type="checkbox" id="jack" v-model="checkedNames" value="jack">
+                <label for="jack">Jack</label>
+                <input type="checkbox" id="jack2" v-model="checkedNames" value="jack2">
+                <label for="jack2">John</label>
+                <input type="checkbox" id="jack3" v-model="checkedNames" value="jack3">
+                <label for="jack3">Mike</label>
+            </div>
+            <span>Checked names: {{checkedNames | json}}</span>
+        </div>
+
+        <div id="vmodel4">
+            <h1>Radio</h1>
+            <input type="radio" id="one" value="One" v-model="picked">
+            <label for="one"> One</label>
+            <br>
+            <input type="radio" id="two" value="Two" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>Picked: {{ picked }}</span>
+        </div>
+
+        <div id="vmodel5">
+            <h1>Select</h1>
+            <select name="" id="" v-model="selected">
+                <option selected>A</option>
+                <option >B</option>
+                <option >C</option>
+            </select>
+            <span>Selected: {{selected}}</span>
+
+            <h1>multiple</h1>
+            <select name="" id="" v-model="multiple_selected" multiple>
+                <option selected>A</option>
+                <option >B</option>
+                <option >C</option>
+            </select>
+            <br>
+            <span>Selected: {{multiple_selected | json}}</span>
+        </div>
+<!--         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        Google Analytics: change UA-XXXXX-Y to be your site's ID.
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+        <script src="../vue.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>

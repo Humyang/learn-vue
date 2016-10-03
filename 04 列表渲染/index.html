@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+<!--         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="vfor">
+            <h1>列表渲染</h1>
+            <ul>
+                <li v-for="item in items">
+                    {{item.message}}
+                </li>
+            </ul>
+        </div>
+
+        <div id="vfor_parent">
+            <h1>访问父域属性</h1>
+            <ul>
+                <li v-for="item in items">
+                    {{parentMessage}} - {{item.message}} - {{$index}}
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="trackby">
+            <h1>track-by</h1>
+            <p>注意第一个 li 的 class 没有被删除，因为 dom 被复用了</p>
+            <input type="button" @click="alter_data" value="alter data">
+            <div>
+                <ul>
+                    <li v-for="item in items" track-by="_id" >
+                        {{item.message}}
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+<!--         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        Google Analytics: change UA-XXXXX-Y to be your site's ID.
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+        <script src="../vue.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
