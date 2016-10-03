@@ -76,6 +76,74 @@
             <br>
             <span>Selected: {{multiple_selected | json}}</span>
         </div>
+
+        <div id="vmodel6">
+            <h1>动态选项</h1>
+            <select v-model="selected">
+                <option v-for="option in options" :value="option.value">
+                    {{ option.text }}
+                </option>
+            </select>
+            <span>selected: {{selected}}</span>
+        </div>
+
+        <div id="vmodel7">
+            <h1>绑定 value，自定义值</h1>
+            
+            <h2>Checkbox</h2>
+            <input type="checkbox">
+            <input 
+                type="checkbox"
+                v-model="toggle"
+                :true-value="a"
+                :false-value="b"
+            >
+            <span>toggle: {{toggle}}</span>
+            <br>
+            <span>a: {{a}}</span>
+            <br>
+            <span>b: {{b}}</span>
+
+            <h2>Radio</h2>
+            <input type="radio" v-model="pick" :value="r_a" name="vbing">
+            <input type="radio" v-model="pick" :value="r_b" name="vbing">
+            <span>pick: {{pick}}</span>
+            <br>
+            <span>a: {{r_a}}</span>
+            <br>
+            <span>b: {{r_a}}</span>
+
+            <h2>Select Options</h2>
+            <select v-model="s_selected" name="" id="">
+                
+                <option :value="{number:123}">123</option>
+                <option :value="{number:456}">456</option>
+            </select>
+            <br>
+            <span>selected:{{s_selected.number}}</span>
+        </div>
+
+
+        <div id="vmodel8">
+            <h1>参数特性</h1>
+
+            <h2>lazy</h2>
+            <input type="text" v-model="msg" lazy>
+            <br>
+            <span>msg: {{msg}}</span>
+
+            <h2>number</h2>
+            <input type="text" v-model="number_msg" number>
+            <br>
+            <span>number_msg: {{number_msg}}</span>
+
+            <h2>debounce</h2>
+            <input type="text" v-model="debounce_msg" debounce="500">
+            <br>
+            <span>debounce_msg: {{debounce_msg}}</span>
+        </div>
+
+
 <!--         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
