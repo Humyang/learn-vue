@@ -28,7 +28,7 @@
 
 <script>
 import Hello from './components/Hello'
-import AsyncComponent from './components/AsyncComponent'
+// import AsyncComponent from './components/AsyncComponent'
 export default {
   data:function(){
     return {
@@ -38,10 +38,7 @@ export default {
   components: {
     Hello,
     'AsyncComponent':function(resolve){
-      setTimeout(function() {
           require(['./components/AsyncComponent'],resolve)
-      }, 2000);
-      
     }
   },
   methods:{
