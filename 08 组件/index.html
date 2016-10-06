@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- <link rel="stylesheet" href="./index.css"> -->
+        <!-- <link rel="stylesheet" href="./animate.css"> -->
+        <!-- Place favicon.ico in the root directory -->
+
+<!--         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="component1">
+            <h1>extend 注册组件</h1>
+            <my-component></my-component>
+            <no-replace></no-replace>
+        </div>
+
+        <div id="component2">
+            <h1>局部注册组件</h1>
+            <parent-component></parent-component>
+        </div>
+        <div id="component3">
+            <h1>注册语法糖</h1>
+            <my-componet3></my-componet3>    
+        </div>
+
+        <div id="component4">
+            <h1>Props 传递数据</h1>
+            <component4 msg="hello!"></component4>
+        </div>
+
+        <div id="component5">
+            <h1>动态 Props</h1>
+            <input type="text" v-model="msg">
+            <component5 :msg="msg"></component5>
+        </div>
+
+        <div id="component6">
+            <h1>Prop 绑定类型</h1>
+
+            <h2>默认单向绑定</h2>
+            parent：
+            <input type="text" v-model="single_msg">
+            <component6 :msg="single_msg"></component6>
+
+            <h2>双向绑定</h2>
+            parent：
+            <input type="text" v-model="parentMsg">
+            <component6 :msg.sync="parentMsg"></component6>
+
+
+            <h2>单次绑定</h2>
+            parent:
+            <input type="text" v-model="once_msg">
+            <component6 :msg.once="once_msg"></component6>  
+        </div>
+
+        <div id="component7">
+            <h1>Props 属性验证</h1>
+            <component7 :msg="msg" :prop-h="proph" :prop-f="15" :prop-b="aaa"></component>  
+        </div>
+        
+        <div>
+            <h1>自定义事件</h1>
+            <!-- 子组件模板 -->
+            <template id="child-template">
+                <input type="text" v-model="msg">
+                <input type="button" @click="notify" value="Dispatch Event">
+            </template>
+
+            <!-- 父组件模版 -->
+            <div id="events-example">
+                <p>Message {{ message | json }}</p>
+                <child v-on:child-msg2="handleIt"></child>
+            </div>
+        </div>
+
+        <div>
+
+            <h1>子组件索引</h1>
+            <template id="component9_child">
+                <p>component9 of template</p>
+            </template>
+            <div id="component9">
+                <component9-child v-ref:profile></component9-child>
+            </div>
+        </div>
+        
+        <div>
+            <h1>使用 Slot 分发内容</h1>
+            <template id="component10_child">
+                <p>component10 for template{{msg1}}</p>
+                <slot>
+                    <p>如果父组件没内容就显示我{{msg2}}</p>
+                </slot>
+                <p>component10 for template2</p>
+            </template>
+            <div id="component10">
+                <h2>没内容</h2>
+                <component10-child></component10-child>
+                <h2>有内容</h2>   
+                <component10-child>{{msg1}} {{msg2}}</component10-child>
+            </div>
+            <h2>具名 Slot</h2>
+            <template id="component11_child">
+                <p>具名 Slot in template</p>
+                <slot name="one"></slot>
+                <slot ></slot>
+                <slot name="two"></slot>
+            </template>
+            <div id="component11">
+                <component11-child>
+                    <p>Default C</p>
+                    <p slot="one">One</p>
+                    <p slot="two">Two</p>
+                    <p slot="three">three</p>
+                    <p>Default A</p>
+                    <p>Default B</p>
+                </component11-child>
+            </div>
+        </div>
+
+
+<!--         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        Google Analytics: change UA-XXXXX-Y to be your site's ID.
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+        <!-- <script src="./jquery.js" ></script> -->
+        <script src="../vue.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>

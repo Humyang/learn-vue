@@ -1,0 +1,81 @@
+/* 必需 */
+.expand-transition {
+  transition: all .3s ease;
+  height: 30px;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
+}
+
+.fade-transition {
+  transition: all .3s ease;
+  height: 30px;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+/* .fade-enter 定义进入的开始状态 */
+/* .fade-leave 定义离开的结束状态 */
+.fade-enter, .fade-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
+}
+
+.bounce-transition {
+  transition: all .3s ease;
+  height: 30px;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+/* .fade-enter 定义进入的开始状态 */
+/* .fade-leave 定义离开的结束状态 */
+.bounce-enter, .bounce-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
+}
+
+
+.ts5-transition {
+  display: inline-block; /* 否则 scale 动画不起作用 */
+}
+.ts5-enter {
+  animation: bounce-in 5s;
+}
+.ts5-leave {
+  animation: bounce-out 5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
