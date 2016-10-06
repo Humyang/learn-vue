@@ -1,0 +1,11 @@
+.slide-transition {
+  // transition: all .3s ease;
+  // height: 30px;
+  // padding: 10px;
+  background-color: #eee;
+  // overflow: hidden;
+  // width: 200px;
+}
+// .slide-enter, .slide-leave {
+//   opacity: 0;
+// }

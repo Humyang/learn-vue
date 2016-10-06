@@ -8,8 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- <link rel="stylesheet" href="./index.css"> -->
-        <!-- <link rel="stylesheet" href="./animate.css"> -->
+        <link rel="stylesheet" href="./animate.css">
+        <link rel="stylesheet" href="./index.css">
+        
         <!-- Place favicon.ico in the root directory -->
 
 <!--         <link rel="stylesheet" href="css/normalize.css">
@@ -133,6 +134,39 @@
             </div>
         </div>
 
+        <div>
+            <h1>动态组件</h1>
+            <template id="component12_child1">
+            <div>
+                <p>动态组件_子组件1</p>
+                <p>msg:{{msg}}</p>
+                </div>
+            </template>
+            <template id="component12_child2">
+                <div>
+                <p>动态组件_子组件2</p>
+                </div>
+            </template>
+            <template id="component12_child3">
+            <div>
+                <p>动态组件_子组件3</p>
+                </div>
+            </template>
+
+            <div id="component12">
+                <input type="radio" id="cp12_one" value="component12-child1" v-model="currentView">
+                <label for="cp12_one"> One</label>
+                <br>
+                <input type="radio" id="cp12_two" value="component12-child2" v-model="currentView">
+                <label for="cp12_two">Two</label>
+                <br>
+                <input type="radio" id="cp12_three" value="component12-child3" v-model="currentView">
+                <label for="cp12_three">three</label>
+                <br>
+                <component :is="currentView" class="animated" keep-alive
+                    transition="slide" transition-mode="out-in"></component>   
+            </div>
+        </div>
 
 <!--         <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>

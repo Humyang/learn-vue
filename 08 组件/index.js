@@ -248,4 +248,37 @@ new Vue({
 
 })
 
+Vue.transition('slide', {
+  enterClass: 'slideInRight',
+  leaveClass: 'slideOutLeft'
+})
+
+Vue.component("component12-child1",{
+	template:"#component12_child1",
+	data:function(){
+		return {
+			msg:"init value"
+		}
+	},
+	activate:function(done){
+		var self = this
+		setTimeout(function() {
+			self.msg = "2 seconds after"
+			done()
+		}, 2000);
+	}
+})
+Vue.component("component12-child2",{
+	template:"#component12_child2"
+})
+Vue.component("component12-child3",{
+	template:"#component12_child3"
+})
+
+new Vue({
+	el:"#component12",
+	data:{
+		currentView: 'component12-child2'
+	},
+})
 
