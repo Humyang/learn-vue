@@ -282,3 +282,47 @@ new Vue({
 	},
 })
 
+Vue.component("component13-child",{
+	props:{
+		item:Object,
+		index:Number
+	},
+	template:"#component13_child"
+})
+
+new Vue({
+	el:"#component13",
+	data:{
+		items:[
+		{text:"item 1"},
+		{text:"item 2"},
+		{text:"item 3"},
+		{text:"item 4"},
+		{text:"item 5"},
+		]
+	}
+})
+Vue.component("component14-child1",{
+	template:"#component14_child1"
+	
+})
+Vue.component("component14-child2",{
+	template:"#component14_child2"
+})
+Vue.component("component14-child3", function(resolve,rejeact){
+	setTimeout(function () {
+    resolve({
+      template: '<div>I am async!</div>'
+    })
+  }, 1000)
+})
+new Vue({
+	el:"#component14",
+	data:{
+		currentView:"component14-child1"
+	}
+})
+
+
+
+

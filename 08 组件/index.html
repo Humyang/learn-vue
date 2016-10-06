@@ -134,7 +134,7 @@
             </div>
         </div>
 
-        <div>
+        <div style="height: 250px;">
             <h1>动态组件</h1>
             <template id="component12_child1">
             <div>
@@ -164,7 +164,56 @@
                 <label for="cp12_three">three</label>
                 <br>
                 <component :is="currentView" class="animated" keep-alive
-                    transition="slide" transition-mode="out-in"></component>   
+                    transition="slide" ></component>   
+            </div>
+        </div>
+
+        <div>
+            <h1>组件与 v-for</h1>
+            <template id="component13_child">
+                <p>item on telplate{{index}}</p>
+                <p>item text：{{item.text}}</p>
+            </template>
+            <div id="component13">
+                <component13-child v-for="item in items"
+                    :item="item"
+                    :index="$index">
+                    
+                </component13-child>
+            </div>
+        </div>
+
+        <div>
+            <h1>异步组件</h1>
+            <template id="component14_child1">
+            <div>
+                <p>动态组件_子组件1</p>
+                <p>msg:{{msg}}</p>
+                </div>
+            </template>
+            <template id="component14_child2">
+                <div>
+                <p>动态组件_子组件2</p>
+                </div>
+            </template>
+            <template id="component14_child3">
+            <div>
+                <p>动态组件_子组件3</p>
+                </div>
+            </template>
+            <div id="component14">
+                <input type="radio" id="cp14_one" value="component14-child1" v-model="currentView">
+                <label for="cp14_one"> One</label>
+                <br>
+                <input type="radio" id="cp14_two" value="component14-child2" v-model="currentView">
+                <label for="cp14_two">Two</label>
+                <br>
+                <input type="radio" id="cp14_three" value="component14-child3" v-model="currentView">
+                <label for="cp14_three">three</label>
+                <br>
+                <component :is="currentView">
+                    
+                </component>   
             </div>
         </div>
 

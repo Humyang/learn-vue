@@ -1,3 +1,6 @@
+#component12{
+	position: relative;
+}
 .slide-transition {
   // transition: all .3s ease;
   // height: 30px;
@@ -5,6 +8,8 @@
   background-color: #eee;
   // overflow: hidden;
   // width: 200px;
+  position: absolute;
+  width: 100%;
 }
 // .slide-enter, .slide-leave {
 //   opacity: 0;

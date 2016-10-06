@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Humyang/learn-vue#readme",
   "dependencies": {
     "vue": "^1.0.28"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
   }
 }
